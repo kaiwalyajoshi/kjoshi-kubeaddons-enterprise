@@ -22,9 +22,6 @@ spec:
       enabled: true
     - name: none
       enabled: true
-  requires:
-    - matchLabels:
-        kubeaddons.mesosphere.io/provides: traefik
   chartReference:
     chart: stable/jenkins
     version: 1.9.4
