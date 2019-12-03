@@ -44,7 +44,7 @@ spec:
             enabled: false
             proxyCompatability: false
         prometheus:
-          enabled: true
+          enabled: false
         serviceMonitorNamespace: "kubeaddons"
         serviceMonitorAdditionalLabels:
           app: jenkins
@@ -52,7 +52,7 @@ spec:
         serviceType: "ClusterIP"
         jenkinsUriPrefix: "/jenkins"
         ingress:
-          enabled: true
+          enabled: false
         path: /jenkins
         annotations:
           kubernetes.io/ingress.class: traefik
