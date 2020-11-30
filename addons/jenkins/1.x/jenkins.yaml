@@ -29,7 +29,7 @@ spec:
         useSecurity: false
         installPlugins:
           - prometheus:2.0.6
-          - kubernetes:1.18.2
+          - kubernetes:1.18.3
           - workflow-job:2.33
           - workflow-aggregator:2.6
           - credentials-binding:1.19
