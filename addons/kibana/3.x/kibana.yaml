@@ -1,10 +1,10 @@
 apiVersion: kubeaddons.mesosphere.io/v1beta2
 kind: Addon
 metadata:
-  name: kibana
+  name: kibana-kubeaddons-enterprise
   namespace: kubeaddons-enterprise
   labels:
-    kubeaddons.mesosphere.io/name: kibana
+    kubeaddons.mesosphere.io/name: kibana-kubeaddons-enterprise
   annotations:
     catalog.kubeaddons.mesosphere.io/addon-revision: "6.8.10-1"
     appversion.kubeaddons.mesosphere.io/kibana: "6.8.10"
