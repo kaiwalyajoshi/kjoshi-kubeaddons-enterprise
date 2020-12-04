@@ -2,10 +2,10 @@
 apiVersion: kubeaddons.mesosphere.io/v1beta1
 kind: Addon
 metadata:
-  name: elasticsearch
+  name: elasticsearch-kubeaddons-enterprise
   namespace: kubeaddons-enterprise
   labels:
-    kubeaddons.mesosphere.io/name: elasticsearch
+    kubeaddons.mesosphere.io/name: elasticsearch-kubeaddons-enterprise
     # TODO: we're temporarily supporting dependency on an existing default storage class
     # on the cluster, this hack will trigger re-queue on Addons until one exists.
     kubeaddons.mesosphere.io/hack-requires-defaultstorageclass: "true"
