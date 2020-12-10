@@ -68,10 +68,11 @@ spec:
           # Because the drain is set to false, we can take advantage here and create resources we need
           postStart: |-
             #!/bin/bash
+            set -x
             set -o errexit
             set -o nounset
             set -o pipefail
-
+            echo "DELTEME@kjoshi"
             CLIENT_URL=http://{{ template "elasticsearch.client.fullname" . }}.kubeaddons.svc.cluster.local.:9200
             # Wait until client nodes accept requests.
             # This prevents data pods from getting into a long CrashLoopBackoff.
