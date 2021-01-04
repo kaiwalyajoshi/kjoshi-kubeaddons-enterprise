@@ -55,7 +55,8 @@ spec:
         capabilities:
           drop:
           - ALL
-        readOnlyRootFilesystem: true
+        # kjoshi: This must explicltly be false or we end up with crash-loops.
+        readOnlyRootFilesystem: false
         runAsNonRoot: true
         runAsUser: 1000
       volumeClaimTemplate:
