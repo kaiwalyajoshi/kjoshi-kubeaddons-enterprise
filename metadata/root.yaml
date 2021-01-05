@@ -83,7 +83,7 @@ cassandra:
     - type: support
       title: Submit a Support Request
       link: https://d2iq.com/services-and-support
-elastic-master:
+elasticsearch:
   display_name: Elastisearch
   description: Elasticsearch OSS
   logo: elastic-master/logo.svg
