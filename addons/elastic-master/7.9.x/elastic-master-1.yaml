@@ -2,14 +2,13 @@
 apiVersion: kubeaddons.mesosphere.io/v1beta1
 kind: Addon
 metadata:
-  name: elasticsearch
+  name: elasticsearch-master
   labels:
-    kubeaddons.mesosphere.io/name: kubeaddons-enterprise-elasticsearch-master
-    kubeaddons.mesosphere.io/hack-requires-defaultstorageclass: "true"
+    kubeaddons.mesosphere.io/name: elasticsearch-master
   annotations:
     catalog.kubeaddons.mesosphere.io/addon-revision: "7.9.3-1"
     appversion.kubeaddons.mesosphere.io/elasticsearch: "7.9.3"
-    docs.kubeaddons.mesosphere.io/kibana: "https://www.elastic.co/guide/en/elasticsearch/reference/7.9/index.html"
+    docs.kubeaddons.mesosphere.io/elasticsearch: "https://www.elastic.co/guide/en/elasticsearch/reference/7.9/index.html"
     values.chart.helm.kubeaddons.mesosphere.io/elasticsearch: "https://raw.githubusercontent.com/elastic/helm-charts/7.9.3/elasticsearch/values.yaml"
 spec:
   kubernetes:
