@@ -4,7 +4,7 @@ kind: Addon
 metadata:
   name: elasticsearch
   labels:
-    kubeaddons.mesosphere.io/name: elasticsearch-master
+    kubeaddons.mesosphere.io/name: elasticsearch-data
   annotations:
     catalog.kubeaddons.mesosphere.io/addon-revision: "7.9.3-1"
     appversion.kubeaddons.mesosphere.io/elasticsearch: "7.9.3"
@@ -26,6 +26,8 @@ spec:
       enabled: true
   requires:
     - matchLabels:
+        kubeaddons.mesosphere.io/name: elasticsearch-master
+    - matchLabels:
         kubeaddons.mesosphere.io/provides: storageclass
   chartReference:
     chart: elasticsearch
@@ -34,18 +36,18 @@ spec:
     values: |
       ---
       roles:
-        master: "true"
+        master: "false"
         ingest: "false"
-        data: "false"
+        data: "true"
       image: docker.elastic.co/elasticsearch/elasticsearch-oss
-      esJavaOpts: "-Xmx1g -Xms1g"
+      esJavaOpts: "-Xmx3g -Xms3g"
       resources:
         limits:
-          cpu: 1000m
-          memory: 2048Mi
+          cpu: 2000m
+          memory: 8192Mi
         requests:
-          cpu: 500m
-          memory: 1536Mi
+          cpu: 1000m
+          memory: 4608Mi
       rbac:
         create: true
       podSecurityPolicy:
@@ -54,11 +56,11 @@ spec:
         capabilities:
           drop:
           - ALL
-        # kjoshi: This must explicltly be false or we end up with crash-loops.
         readOnlyRootFilesystem: false
         runAsNonRoot: true
         runAsUser: 1000
+      replicas: 3
       volumeClaimTemplate:
         resources:
           requests:
-            storage: 4Gi
+            storage: 30Gi
