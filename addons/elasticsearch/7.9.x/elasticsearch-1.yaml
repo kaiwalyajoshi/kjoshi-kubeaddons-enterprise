@@ -36,8 +36,8 @@ spec:
       ---
       roles:
         master: "true"
-        ingest: "true"
-        data: "true"
+        ingest: "false"
+        data: "false"
       image: docker.elastic.co/elasticsearch/elasticsearch-oss
       esJavaOpts: "-Xmx1g -Xms1g"
       resources:
