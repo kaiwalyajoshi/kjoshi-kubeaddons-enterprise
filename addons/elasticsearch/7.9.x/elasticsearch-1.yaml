@@ -3,9 +3,9 @@
 apiVersion: kubeaddons.mesosphere.io/v1beta1
 kind: Addon
 metadata:
-  name: elasticsearch
+  name: elasticsearch-oss
   labels:
-    kubeaddons.mesosphere.io/name: elasticsearch
+    kubeaddons.mesosphere.io/name: elasticsearch-oss
   annotations:
     catalog.kubeaddons.mesosphere.io/addon-revision: "7.9.3-1"
     appversion.kubeaddons.mesosphere.io/elasticsearch: "7.9.3"
