@@ -83,20 +83,3 @@ cassandra:
     - type: support
       title: Submit a Support Request
       link: https://d2iq.com/services-and-support
-elasticsearch:
-  display_name: Elastisearch
-  description: Elasticsearch OSS
-  logo: elasticsearch/logo.svg
-  category: Data Services
-  overview: elasticsearch/overview.md
-  resources:
-    provider:
-      title: Elastic
-      link: https://www.elastic.co
-    links:
-    - type: resources
-      title: Documentation
-      link: https://github.com/elastic/helm-charts/tree/master/elasticsearch
-    - type: support
-      title: Submit a Support Request
-      link: https://d2iq.com/services-and-support
