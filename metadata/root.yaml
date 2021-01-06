@@ -86,9 +86,9 @@ cassandra:
 elasticsearch:
   display_name: Elastisearch
   description: Elasticsearch OSS
-  logo: elastic-master/logo.svg
+  logo: elasticsearch/logo.svg
   category: Data Services
-  overview: elastic-master/overview.md
+  overview: elasticsearch/overview.md
   resources:
     provider:
       title: Elastic
