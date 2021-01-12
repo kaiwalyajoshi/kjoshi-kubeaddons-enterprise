@@ -35,7 +35,7 @@ spec:
     values: |
       ---
       elasticsearch-client:
-        clusterName: "{{ .metadata.name }}-elasticsearch-oss"
+        clusterName: "elasticsearch-oss"
         nodeGroup: "client"
         masterService: "elasticsearch-oss-master"
       elasticsearch-master:
