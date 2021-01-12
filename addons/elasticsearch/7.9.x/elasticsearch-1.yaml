@@ -34,18 +34,18 @@ spec:
     version: 0.1.0
     values: |
       ---
-    elasticsearch-client:
-      clusterName: "elasticsearch-oss"
-      nodeGroup: "client"
-      masterService: "elasticsearch-oss-master"
-    elasticsearch-master:
-      clusterName: "elasticsearch-oss"
-      nodeGroup: "master"
-    elasticsearch-data:
-      clusterName: "elasticsearch-oss"
-      nodeGroup: "data"
-      masterService: "elasticsearch-oss-master"
-    elasticsearch-ingest:
-      clusterName: "elasticsearch-oss"
-      nodeGroup: "ingest"
-      masterService: "elasticsearch-oss-master"
+      elasticsearch-client:
+        clusterName: "elasticsearch-oss"
+        nodeGroup: "client"
+        masterService: "elasticsearch-oss-master"
+      elasticsearch-master:
+        clusterName: "elasticsearch-oss"
+        nodeGroup: "master"
+      elasticsearch-data:
+        clusterName: "elasticsearch-oss"
+        nodeGroup: "data"
+        masterService: "elasticsearch-oss-master"
+      elasticsearch-ingest:
+        clusterName: "elasticsearch-oss"
+        nodeGroup: "ingest"
+        masterService: "elasticsearch-oss-master"
