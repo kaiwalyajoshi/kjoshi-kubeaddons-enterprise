@@ -1,3 +1,4 @@
+---
 apiVersion: kubeaddons.mesosphere.io/v1beta2
 kind: Addon
 metadata:
@@ -7,7 +8,6 @@ metadata:
   annotations:
     catalog.kubeaddons.mesosphere.io/addon-revision: "7.9.3-1"
     appversion.kubeaddons.mesosphere.io/kibana-oss: "7.9.3"
-    endpoint.kubeaddons.mesosphere.io/kibana-oss: "/ops/portal/kibana/enterprise"
     docs.kubeaddons.mesosphere.io/kibana-oss: "https://www.elastic.co/guide/en/kibana/7.9/index.html"
     values.chart.helm.kubeaddons.mesosphere.io/kibana-oss: "https://raw.githubusercontent.com/elastic/helm-charts/7.9.3/kibana/values.yaml"
 spec:
@@ -32,7 +32,7 @@ spec:
     repo: https://helm.elastic.co
     version: 7.9.3
     values: |
-    ---
+      ---
       image: "docker.elastic.co/kibana/kibana-oss"
       imageTag: "7.9.3"
       elasticsearchHosts: "http://elasticsearch-oss-client:9200"
