@@ -8,9 +8,9 @@ metadata:
   annotations:
     catalog.kubeaddons.mesosphere.io/addon-revision: "7.9.3-1"
     appversion.kubeaddons.mesosphere.io/elasticsearch-oss: "7.9.3"
-      #docs.kubeaddons.mesosphere.io/elasticsearch-oss: "https://www.elastic.co/guide/en/elasticsearch/reference/7.9/index.html"
+    docs.kubeaddons.mesosphere.io/elasticsearch-oss: "https://www.elastic.co/guide/en/elasticsearch/reference/7.9/index.html"
     # TODO@kjoshi: Change this to reference a tag!
-    #values.chart.helm.kubeaddons.mesosphere.io/elasticsearch-oss: "https://raw.githubusercontent.com/kaiwalyajoshi/kommander-elasticsearch/kjoshi/elastic-7.9.3/values.yaml"
+    values.chart.helm.kubeaddons.mesosphere.io/elasticsearch-oss: "https://raw.githubusercontent.com/kaiwalyajoshi/kommander-elasticsearch/kjoshi/elastic-7.9.3/values.yaml"
 spec:
   kubernetes:
     minSupportedVersion: v1.15.0
@@ -35,7 +35,7 @@ spec:
     values: |
       ---
       elasticsearch-client:
-        clusterName: "elasticsearch-oss"
+        clusterName: "{{ .metadata.name }}-elasticsearch-oss"
         nodeGroup: "client"
         masterService: "elasticsearch-oss-master"
       elasticsearch-master:
