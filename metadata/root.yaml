@@ -83,3 +83,38 @@ cassandra:
     - type: support
       title: Submit a Support Request
       link: https://d2iq.com/services-and-support
+elasticsearch:
+  display_name: Elasticsearch-OSS
+  description: Elasticsearch
+  logo: cassandra/logo.svg
+  category: Data Services
+  overview: cassandra/overview.md
+  resources:
+    provider:
+      title: Cassandra
+      link: http://cassandra.apache.org/
+    links:
+    - type: resources
+      title: Documentation
+      link: https://github.com/kudobuilder/operators/tree/master/repository/cassandra/3.11
+    - type: support
+      title: Submit a Support Request
+      link: https://d2iq.com/services-and-support
+kibana:
+  display_name: Kibana-OSS
+  description: Kibana
+  logo: cassandra/logo.svg
+  category: Data Services
+  overview: cassandra/overview.md
+  resources:
+    provider:
+      title: Cassandra
+      link: http://cassandra.apache.org/
+    links:
+    - type: resources
+      title: Documentation
+      link: https://github.com/kudobuilder/operators/tree/master/repository/cassandra/3.11
+    - type: support
+      title: Submit a Support Request
+      link: https://d2iq.com/services-and-support
+
