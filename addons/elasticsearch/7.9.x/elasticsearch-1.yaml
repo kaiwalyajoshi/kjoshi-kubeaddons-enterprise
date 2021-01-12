@@ -1,5 +1,4 @@
 ---
-# Elastic Master
 apiVersion: kubeaddons.mesosphere.io/v1beta1
 kind: Addon
 metadata:
@@ -10,7 +9,8 @@ metadata:
     catalog.kubeaddons.mesosphere.io/addon-revision: "7.9.3-1"
     appversion.kubeaddons.mesosphere.io/elasticsearch: "7.9.3"
     docs.kubeaddons.mesosphere.io/elasticsearch: "https://www.elastic.co/guide/en/elasticsearch/reference/7.9/index.html"
-    values.chart.helm.kubeaddons.mesosphere.io/elasticsearch: "https://raw.githubusercontent.com/elastic/helm-charts/7.9.3/elasticsearch/values.yaml"
+    # TODO@kjoshi: Change this to reference a tag!
+    values.chart.helm.kubeaddons.mesosphere.io/elasticsearch: "https://raw.githubusercontent.com/kaiwalyajoshi/kommander-elasticsearch/kjoshi/elastic-7.9.3/values.yaml"
 spec:
   kubernetes:
     minSupportedVersion: v1.15.0
@@ -29,37 +29,23 @@ spec:
     - matchLabels:
         kubeaddons.mesosphere.io/provides: storageclass
   chartReference:
-    chart: elasticsearch
-    repo: https://helm.elastic.co
-    version: 7.9.3
+    chart: kommander-elasticsearch
+    repo: https://kaiwalyajoshi.github.io/kommander-elasticsearch
+    version: 0.1.0
     values: |
       ---
-      roles:
-        master: "true"
-        ingest: "false"
-        data: "false"
-      image: docker.elastic.co/elasticsearch/elasticsearch-oss
-      esJavaOpts: "-Xmx1g -Xms1g"
-      resources:
-        limits:
-          cpu: 1000m
-          memory: 2048Mi
-        requests:
-          cpu: 500m
-          memory: 1536Mi
-      rbac:
-        create: true
-      podSecurityPolicy:
-        create: true
-      securityContext:
-        capabilities:
-          drop:
-          - ALL
-        # kjoshi: This must explicltly be false or we end up with crash-loops.
-        readOnlyRootFilesystem: false
-        runAsNonRoot: true
-        runAsUser: 1000
-      volumeClaimTemplate:
-        resources:
-          requests:
-            storage: 4Gi
+    elasticsearch-client:
+      clusterName: "elasticsearch-oss"
+      nodeGroup: "client"
+      masterService: "elasticsearch-oss-master"
+    elasticsearch-master:
+      clusterName: "elasticsearch-oss"
+      nodeGroup: "master"
+    elasticsearch-data:
+      clusterName: "elasticsearch-oss"
+      nodeGroup: "data"
+      masterService: "elasticsearch-oss-master"
+    elasticsearch-ingest:
+      clusterName: "elasticsearch-oss"
+      nodeGroup: "ingest"
+      masterService: "elasticsearch-oss-master"
