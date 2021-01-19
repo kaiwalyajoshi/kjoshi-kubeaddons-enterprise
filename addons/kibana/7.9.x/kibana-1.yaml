@@ -31,8 +31,23 @@ spec:
     chart: kibana
     repo: https://helm.elastic.co
     version: 7.9.3
+    valuesRemap:
+      "ingress.annotations.traefik\\.ingress\\.kubernetes\\.io/auth-url": "ingress.auth.auth-url"
     values: |
       ---
       image: "docker.elastic.co/kibana/kibana-oss"
       imageTag: "7.9.3"
       elasticsearchHosts: "http://elasticsearch-oss-client:9200"
+      ingress:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+          traefik.frontend.rule.type: PathPrefixStrip
+          traefik.ingress.kubernetes.io/auth-response-headers: X-Forwarded-User,Authorization,Impersonate-User,Impersonate-Group
+          traefik.ingress.kubernetes.io/auth-type: forward
+          traefik.ingress.kubernetes.io/auth-url: http://traefik-forward-auth-kubeaddons.kubeaddons.svc.cluster.local:4181/
+          traefik.ingress.kubernetes.io/priority: "2"
+        hosts:
+          host: "elasticsearch-oss-client"
+          paths:
+            path: /ops/portal/kibana-oss
