@@ -34,10 +34,17 @@ spec:
     version: 0.2.1
     values: |
       ---
+      # Recommended defaults used here, view Helm chart values to
+      # override any defaults set here.
       elasticsearch-client:
-        clusterName: "elasticsearch-oss"
-        nodeGroup: "client"
+        # It is suggested that this match the catalog addon name.
+        nameOverride: "elasticsearch-oss"
+        # This must match <nameOverride>-master
+        # where <nameOverride> is defined above.
         masterService: "elasticsearch-oss-master"
+        #-------Recommended Defaults--------------
+        nodeGroup: "client"
+        replicas: 1
         resources:
           requests:
             cpu: "1000m"
@@ -51,8 +58,11 @@ spec:
             requests:
               storage: 1Gi
       elasticsearch-master:
-        clusterName: "elasticsearch-oss"
+        # It is suggested that this match the catalog addon name.
+        nameOverride: "elasticsearch-oss"
+        #-------Recommended Defaults--------------
         nodeGroup: "master"
+        replicas: 3
         resources:
           requests:
             cpu: "1000m"
@@ -66,9 +76,13 @@ spec:
             requests:
               storage: 2Gi
       elasticsearch-data:
-        clusterName: "elasticsearch-oss"
-        nodeGroup: "data"
+        # It is suggested that this match the catalog addon name.
+        nameOverride: "elasticsearch-oss"
+        # This must match <nameOverride>-master
+        # where <nameOverride> is defined above.
         masterService: "elasticsearch-oss-master"
+        #-------Recommended Defaults--------------
+        nodeGroup: "data"
         replicas: 3
         resources:
           requests:
@@ -83,10 +97,14 @@ spec:
             requests:
               storage: 10Gi
       elasticsearch-ingest:
-        clusterName: "elasticsearch-oss"
-        nodeGroup: "ingest"
+        # It is suggested that this match the catalog addon name.
+        nameOverride: "elasticsearch-oss"
+        # This must match <nameOverride>-master
+        # where <nameOverride> is defined above.
         masterService: "elasticsearch-oss-master"
         replicas: 0 #Disabled
+        #-------Recommended Defaults--------------
+        nodeGroup: "ingest"
         resources:
           requests:
             cpu: "500m"
