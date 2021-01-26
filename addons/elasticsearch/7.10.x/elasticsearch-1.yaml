@@ -39,81 +39,19 @@ spec:
       elasticsearch-master:
         # It is suggested that this match the catalog addon name.
         clusterName: "elasticsearch-oss"
-        #-------Recommended Defaults--------------
-        nodeGroup: "master"
-        replicas: 3
-        resources:
-          requests:
-            cpu: "1000m"
-            memory: "2Gi"
-          limits:
-            cpu: "1000m"
-            memory: "2Gi"
-        volumeClaimTemplate:
-          accessModes: [ "ReadWriteOnce" ]
-          resources:
-            requests:
-              storage: 2Gi
       elasticsearch-client:
         # It is suggested that this match the catalog addon name.
         clusterName: "elasticsearch-oss"
         # This must equal <elasticsearch-master.clusterName>-master
-        # defined above.
         masterService: "elasticsearch-oss-master"
-        #-------Recommended Defaults--------------
-        nodeGroup: "client"
-        replicas: 1
-        resources:
-          requests:
-            cpu: "1000m"
-            memory: "2Gi"
-          limits:
-            cpu: "1000m"
-            memory: "2Gi"
-        volumeClaimTemplate:
-          accessModes: [ "ReadWriteOnce" ]
-          resources:
-            requests:
-              storage: 1Gi
       elasticsearch-data:
         # It is suggested that this match the catalog addon name.
         clusterName: "elasticsearch-oss"
         # This must equal <elasticsearch-master.clusterName>-master
-        # defined above.
         masterService: "elasticsearch-oss-master"
-        #-------Recommended Defaults--------------
-        nodeGroup: "data"
-        replicas: 3
-        resources:
-          requests:
-            cpu: "1000m"
-            memory: "4Gi"
-          limits:
-            cpu: "1000m"
-            memory: "4Gi"
-        volumeClaimTemplate:
-          accessModes: [ "ReadWriteOnce" ]
-          resources:
-            requests:
-              storage: 10Gi
       elasticsearch-ingest:
         # It is suggested that this match the catalog addon name.
         clusterName: "elasticsearch-oss"
         # This must equal <elasticsearch-master.clusterName>-master
-        # defined above.
         masterService: "elasticsearch-oss-master"
         replicas: 0 #Disabled
-        #-------Recommended Defaults--------------
-        nodeGroup: "ingest"
-        resources:
-          requests:
-            cpu: "500m"
-            memory: "2Gi"
-          limits:
-            cpu: "1000m"
-            memory: "2Gi"
-        volumeClaimTemplate:
-          accessModes: [ "ReadWriteOnce" ]
-          resources:
-            requests:
-              storage: 2Gi
