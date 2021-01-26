@@ -38,7 +38,7 @@ spec:
       # override any defaults set here.
       elasticsearch-master:
         # It is suggested that this match the catalog addon name.
-        nameOverride: "elasticsearch-oss"
+        clusterName: "elasticsearch-oss"
         #-------Recommended Defaults--------------
         nodeGroup: "master"
         replicas: 3
@@ -56,8 +56,8 @@ spec:
               storage: 2Gi
       elasticsearch-client:
         # It is suggested that this match the catalog addon name.
-        nameOverride: "elasticsearch-oss"
-        # This must equal <elasticsearch-master.nameOverride>-master
+        clusterName: "elasticsearch-oss"
+        # This must equal <elasticsearch-master.clusterName>-master
         # defined above.
         masterService: "elasticsearch-oss-master"
         #-------Recommended Defaults--------------
@@ -77,8 +77,8 @@ spec:
               storage: 1Gi
       elasticsearch-data:
         # It is suggested that this match the catalog addon name.
-        nameOverride: "elasticsearch-oss"
-        # This must equal <elasticsearch-master.nameOverride>-master
+        clusterName: "elasticsearch-oss"
+        # This must equal <elasticsearch-master.clusterName>-master
         # defined above.
         masterService: "elasticsearch-oss-master"
         #-------Recommended Defaults--------------
@@ -98,8 +98,8 @@ spec:
               storage: 10Gi
       elasticsearch-ingest:
         # It is suggested that this match the catalog addon name.
-        nameOverride: "elasticsearch-oss"
-        # This must equal <elasticsearch-master.nameOverride>-master
+        clusterName: "elasticsearch-oss"
+        # This must equal <elasticsearch-master.clusterName>-master
         # defined above.
         masterService: "elasticsearch-oss-master"
         replicas: 0 #Disabled
