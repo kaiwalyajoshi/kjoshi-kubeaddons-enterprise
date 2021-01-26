@@ -31,7 +31,7 @@ spec:
   chartReference:
     chart: kommander-elasticsearch
     repo: https://kaiwalyajoshi.github.io/kommander-elasticsearch
-    version: 0.2.0
+    version: 0.2.1
     values: |
       ---
       elasticsearch-client:
