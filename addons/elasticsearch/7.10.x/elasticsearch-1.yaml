@@ -36,27 +36,6 @@ spec:
       ---
       # Recommended defaults used here, view Helm chart values to
       # override any defaults set here.
-      elasticsearch-client:
-        # It is suggested that this match the catalog addon name.
-        nameOverride: "elasticsearch-oss"
-        # This must match <nameOverride>-master
-        # where <nameOverride> is defined above.
-        masterService: "elasticsearch-oss-master"
-        #-------Recommended Defaults--------------
-        nodeGroup: "client"
-        replicas: 1
-        resources:
-          requests:
-            cpu: "1000m"
-            memory: "2Gi"
-          limits:
-            cpu: "1000m"
-            memory: "2Gi"
-        volumeClaimTemplate:
-          accessModes: [ "ReadWriteOnce" ]
-          resources:
-            requests:
-              storage: 1Gi
       elasticsearch-master:
         # It is suggested that this match the catalog addon name.
         nameOverride: "elasticsearch-oss"
@@ -75,11 +54,32 @@ spec:
           resources:
             requests:
               storage: 2Gi
+      elasticsearch-client:
+        # It is suggested that this match the catalog addon name.
+        nameOverride: "elasticsearch-oss"
+        # This must equal <elasticsearch-master.nameOverride>-master
+        # defined above.
+        masterService: "elasticsearch-oss-master"
+        #-------Recommended Defaults--------------
+        nodeGroup: "client"
+        replicas: 1
+        resources:
+          requests:
+            cpu: "1000m"
+            memory: "2Gi"
+          limits:
+            cpu: "1000m"
+            memory: "2Gi"
+        volumeClaimTemplate:
+          accessModes: [ "ReadWriteOnce" ]
+          resources:
+            requests:
+              storage: 1Gi
       elasticsearch-data:
         # It is suggested that this match the catalog addon name.
         nameOverride: "elasticsearch-oss"
-        # This must match <nameOverride>-master
-        # where <nameOverride> is defined above.
+        # This must equal <elasticsearch-master.nameOverride>-master
+        # defined above.
         masterService: "elasticsearch-oss-master"
         #-------Recommended Defaults--------------
         nodeGroup: "data"
@@ -99,8 +99,8 @@ spec:
       elasticsearch-ingest:
         # It is suggested that this match the catalog addon name.
         nameOverride: "elasticsearch-oss"
-        # This must match <nameOverride>-master
-        # where <nameOverride> is defined above.
+        # This must equal <elasticsearch-master.nameOverride>-master
+        # defined above.
         masterService: "elasticsearch-oss-master"
         replicas: 0 #Disabled
         #-------Recommended Defaults--------------
