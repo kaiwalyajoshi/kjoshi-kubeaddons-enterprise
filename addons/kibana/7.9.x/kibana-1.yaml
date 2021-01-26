@@ -8,6 +8,7 @@ metadata:
   annotations:
     catalog.kubeaddons.mesosphere.io/addon-revision: "7.9.3-1"
     appversion.kubeaddons.mesosphere.io/kibana-oss: "7.9.3"
+    endpoint.kubeaddons.mesosphere.io/kibana: "/ops/portal/kibana-oss"
     docs.kubeaddons.mesosphere.io/kibana-oss: "https://www.elastic.co/guide/en/kibana/7.9/index.html"
     values.chart.helm.kubeaddons.mesosphere.io/kibana-oss: "https://raw.githubusercontent.com/elastic/helm-charts/7.9.3/kibana/values.yaml"
 spec:
@@ -49,4 +50,8 @@ spec:
           traefik.ingress.kubernetes.io/auth-url: http://traefik-forward-auth-kubeaddons.kubeaddons.svc.cluster.local:4181/
           traefik.ingress.kubernetes.io/priority: "2"
         hosts: [""]
-        path: /kibana-oss
+        path: /ops/portal/kibana-oss
+      healthCheckPath: "/ops/portal/kibana-oss/app/kibana"
+      kibanaConfig:
+        kibana.yml: |
+          server.BasePath: /ops/portal/kibana-oss
