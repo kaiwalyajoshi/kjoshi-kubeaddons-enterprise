@@ -54,4 +54,4 @@ spec:
       healthCheckPath: "/ops/portal/kibana-oss/app/kibana"
       kibanaConfig:
         kibana.yml: |
-          server.BasePath: /ops/portal/kibana-oss
+          server.basePath: /ops/portal/kibana-oss
