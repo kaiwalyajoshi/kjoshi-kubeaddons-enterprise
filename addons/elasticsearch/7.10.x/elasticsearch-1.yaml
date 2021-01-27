@@ -31,7 +31,7 @@ spec:
   chartReference:
     chart: kommander-elasticsearch
     repo: https://kaiwalyajoshi.github.io/kommander-elasticsearch
-    version: 0.2.1
+    version: 0.3.0
     values: |
       ---
       # Recommended defaults used here, view Helm chart values to
@@ -55,3 +55,7 @@ spec:
         # This must equal <elasticsearch-master.clusterName>-master
         masterService: "elasticsearch-oss-master"
         replicas: 0 #Disabled
+      prometheus-exporter:
+        es:
+          # This must equal <elasticsearch-client.clusterName>-client
+          uri: http://elasticsearch-oss-client:9200
