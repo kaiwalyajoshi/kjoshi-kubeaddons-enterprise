@@ -83,7 +83,7 @@ cassandra:
     - type: support
       title: Submit a Support Request
       link: https://d2iq.com/services-and-support
-elasticsearch:
+elasticsearch-oss:
   display_name: Elasticsearch-OSS
   description: Elasticsearch
   logo: elasticsearch/logo.svg
@@ -100,7 +100,7 @@ elasticsearch:
     - type: support
       title: Submit a Support Request
       link: https://d2iq.com/services-and-support
-kibana:
+kibana-oss:
   display_name: Kibana-OSS
   description: Kibana
   logo: kibana/logo.svg
