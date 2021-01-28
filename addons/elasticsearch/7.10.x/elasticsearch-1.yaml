@@ -9,8 +9,7 @@ metadata:
     catalog.kubeaddons.mesosphere.io/addon-revision: "7.10.0-1"
     appversion.kubeaddons.mesosphere.io/elasticsearch-oss: "7.10.0"
     docs.kubeaddons.mesosphere.io/elasticsearch-oss: "https://www.elastic.co/guide/en/elasticsearch/reference/7.10/index.html"
-    # TODO@kjoshi: Change this to reference a tag!
-    values.chart.helm.kubeaddons.mesosphere.io/elasticsearch-oss: "https://raw.githubusercontent.com/kaiwalyajoshi/kommander-elasticsearch/kjoshi/elastic-7.10.x/values.yaml"
+    values.chart.helm.kubeaddons.mesosphere.io/elasticsearch-oss: "https://raw.githubusercontent.com/mesosphere/kubeaddons-elastic/elastic-7.10.x/values.yaml?token=AA7WBLRQBDITFUJSM4SHTLLADODNA"
 spec:
   kubernetes:
     minSupportedVersion: v1.15.0
@@ -29,9 +28,9 @@ spec:
     - matchLabels:
         kubeaddons.mesosphere.io/provides: storageclass
   chartReference:
-    chart: kommander-elasticsearch
-    repo: https://kaiwalyajoshi.github.io/kommander-elasticsearch
-    version: 0.3.0
+    chart: kubeaddons-elasticsearch
+    repo: https://mesosphere.github.io/kubeaddons-elastic
+    version: 0.1.0
     values: |
       ---
       # Recommended defaults used here, view Helm chart values to
@@ -55,7 +54,3 @@ spec:
         # This must equal <elasticsearch-master.clusterName>-master
         masterService: "elasticsearch-oss-master"
         replicas: 0 #Disabled
-      prometheus-exporter:
-        es:
-          # This must equal <elasticsearch-client.clusterName>-client
-          uri: http://elasticsearch-oss-client:9200
