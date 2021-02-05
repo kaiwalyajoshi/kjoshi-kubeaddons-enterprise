@@ -27,6 +27,8 @@ spec:
   requires:
     - matchLabels:
         kubeaddons.mesosphere.io/provides: storageclass
+    - matchLabels:
+        kubeaddons.mesosphere.io/name: elasticsearch-oss
   chartReference:
     chart: kibana
     repo: https://helm.elastic.co
