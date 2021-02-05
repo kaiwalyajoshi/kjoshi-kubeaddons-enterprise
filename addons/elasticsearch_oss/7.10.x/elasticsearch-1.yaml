@@ -7,9 +7,9 @@ metadata:
     kubeaddons.mesosphere.io/name: elasticsearch_oss
   annotations:
     catalog.kubeaddons.mesosphere.io/addon-revision: "7.10.0-1"
-    appversion.kubeaddons.mesosphere.io/elasticsearch-oss: "7.10.0"
-    docs.kubeaddons.mesosphere.io/elasticsearch-oss: "https://www.elastic.co/guide/en/elasticsearch/reference/7.10/index.html"
-    values.chart.helm.kubeaddons.mesosphere.io/elasticsearch-oss: "https://raw.githubusercontent.com/mesosphere/kubeaddons-elastic/elastic-7.10.x/values.yaml?token=AA7WBLRQBDITFUJSM4SHTLLADODNA"
+    appversion.kubeaddons.mesosphere.io/elasticsearch_oss: "7.10.0"
+    docs.kubeaddons.mesosphere.io/elasticsearch_oss: "https://www.elastic.co/guide/en/elasticsearch/reference/7.10/index.html"
+    values.chart.helm.kubeaddons.mesosphere.io/elasticsearch_oss: "https://raw.githubusercontent.com/mesosphere/kubeaddons-elastic/elastic-7.10.x/values.yaml?token=AA7WBLRQBDITFUJSM4SHTLLADODNA"
 spec:
   kubernetes:
     minSupportedVersion: v1.15.0

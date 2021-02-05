@@ -2,14 +2,14 @@
 apiVersion: kubeaddons.mesosphere.io/v1beta1
 kind: Addon
 metadata:
-  name: kibana-oss
+  name: kibana_oss
   labels:
-    kubeaddons.mesosphere.io/name: kibana-oss
+    kubeaddons.mesosphere.io/name: kibana_oss
   annotations:
     catalog.kubeaddons.mesosphere.io/addon-revision: "7.9.3-1"
-    appversion.kubeaddons.mesosphere.io/kibana-oss: "7.9.3"
-    docs.kubeaddons.mesosphere.io/kibana-oss: "https://www.elastic.co/guide/en/kibana/7.9/index.html"
-    values.chart.helm.kubeaddons.mesosphere.io/kibana-oss: "https://raw.githubusercontent.com/elastic/helm-charts/7.9.3/kibana/values.yaml"
+    appversion.kubeaddons.mesosphere.io/kibana_oss: "7.9.3"
+    docs.kubeaddons.mesosphere.io/kibana_oss: "https://www.elastic.co/guide/en/kibana/7.9/index.html"
+    values.chart.helm.kubeaddons.mesosphere.io/kibana_oss: "https://raw.githubusercontent.com/elastic/helm-charts/7.9.3/kibana/values.yaml"
 spec:
   kubernetes:
     minSupportedVersion: v1.15.0

@@ -7,9 +7,9 @@ metadata:
     kubeaddons.mesosphere.io/name: kibana_oss
   annotations:
     catalog.kubeaddons.mesosphere.io/addon-revision: "7.10.0-1"
-    appversion.kubeaddons.mesosphere.io/kibana-oss: "7.10.0"
-    docs.kubeaddons.mesosphere.io/kibana-oss: "https://www.elastic.co/guide/en/kibana/7.10/index.html"
-    values.chart.helm.kubeaddons.mesosphere.io/kibana-oss: "https://raw.githubusercontent.com/mesosphere/kubeaddons-elastic/kibana-7.10.x/values.yaml?token=AA7WBLXDW6FOT55PL74IUCLADODWA"
+    appversion.kubeaddons.mesosphere.io/kibana_oss: "7.10.0"
+    docs.kubeaddons.mesosphere.io/kibana_oss: "https://www.elastic.co/guide/en/kibana/7.10/index.html"
+    values.chart.helm.kubeaddons.mesosphere.io/kibana_oss: "https://raw.githubusercontent.com/mesosphere/kubeaddons-elastic/kibana-7.10.x/values.yaml?token=AA7WBLXDW6FOT55PL74IUCLADODWA"
 spec:
   kubernetes:
     minSupportedVersion: v1.15.0
