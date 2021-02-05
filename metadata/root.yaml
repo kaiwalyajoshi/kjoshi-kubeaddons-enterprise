@@ -117,4 +117,20 @@ kibana-oss:
     - type: support
       title: Submit a Support Request
       link: https://d2iq.com/services-and-support
-
+elasticsearch-exporter:
+  display_name: Elasticserach Exporter
+  description: Elasticsearch Exporter
+  logo: elasticsearch-exporter/logo.svg
+  category: Data Services
+  overview: elasticsearch-exporter/overview.md
+  resources:
+    provider:
+      title: Elasticsearch Exporter
+      link: https://github.com/justwatchcom/elasticsearch_exporter
+    links:
+    - type: resources
+      title: Documentation
+      link: https://github.com/justwatchcom/elasticsearch_exporter
+    - type: support
+      title: Submit a Support Request
+      link: https://d2iq.com/services-and-support
