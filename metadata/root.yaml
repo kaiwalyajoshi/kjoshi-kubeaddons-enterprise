@@ -103,9 +103,9 @@ elasticsearch_oss:
 kibana_oss:
   display_name: Kibana-OSS
   description: Kibana
-  logo: kibana/logo.svg
+  logo: kibana_oss/logo.svg
   category: Data Services
-  overview: kibana/overview.md
+  overview: kibana_oss/overview.md
   resources:
     provider:
       title: Kibana
