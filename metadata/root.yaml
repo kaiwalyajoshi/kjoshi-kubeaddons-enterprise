@@ -83,12 +83,12 @@ cassandra:
     - type: support
       title: Submit a Support Request
       link: https://d2iq.com/services-and-support
-elasticsearch-oss:
+elasticsearch_oss:
   display_name: Elasticsearch-OSS
   description: Elasticsearch
-  logo: elasticsearch/logo.svg
+  logo: elasticsearch_oss/logo.svg
   category: Data Services
-  overview: elasticsearch/overview.md
+  overview: elasticsearch_oss/overview.md
   resources:
     provider:
       title: Elasticsearch
@@ -100,7 +100,7 @@ elasticsearch-oss:
     - type: support
       title: Submit a Support Request
       link: https://d2iq.com/services-and-support
-kibana-oss:
+kibana_oss:
   display_name: Kibana-OSS
   description: Kibana
   logo: kibana/logo.svg
