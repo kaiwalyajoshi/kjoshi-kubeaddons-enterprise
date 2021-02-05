@@ -2,9 +2,9 @@
 apiVersion: kubeaddons.mesosphere.io/v1beta1
 kind: Addon
 metadata:
-  name: kibana-oss
+  name: kibana_oss
   labels:
-    kubeaddons.mesosphere.io/name: kibana-oss
+    kubeaddons.mesosphere.io/name: kibana_oss
   annotations:
     catalog.kubeaddons.mesosphere.io/addon-revision: "7.10.0-1"
     appversion.kubeaddons.mesosphere.io/kibana-oss: "7.10.0"
